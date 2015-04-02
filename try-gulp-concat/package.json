@@ -1,7 +1,7 @@
 {
-  "name": "concat",
+  "name": "try-gulp-concat",
   "version": "1.0.0",
-  "description": "",
+  "description": "gulp-concat 文件合并",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
