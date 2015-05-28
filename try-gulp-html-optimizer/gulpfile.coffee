@@ -1,23 +1,35 @@
 gulp = require 'gulp'
+htmlOptimizer = require 'gulp-html-optimizer'
+imgCssSprite = require 'gulp-img-css-sprite'
 
 destBase = './dest/'
 
 gulp.task 'copy', ()->
-    gulp.src ['css/**/*']
-        .pipe gulp.dest(destBase + 'css/')
+    gulp.src ['./src/img/**/*',]
+        .pipe gulp.dest(destBase)
 
+gulp.task 'sprite', ->
+    gulp.src('src/**/*.+(jpg|png|jpeg)')
+        # .pipe imgCssSprite.imgStream
+        #     padding: 2
+        .pipe gulp.dest('dest')
 
-gulp.task 'example', ()->
-    htmlOptimizer = require 'gulp-html-optimizer'
-    gulp.src('./*.src.html')
+gulp.task 'example', ['sprite'], ()->
+    console.log 'test'
+    gulp.src ['./src/*.src.html']
         .pipe htmlOptimizer
-            base64img: true
+            generateDataUri: true 
             beautifyTemplate: true
             trace: true
+            cssSprite:
+                base: 
+                    url: '//webyom.org'
+                    dir: './src'
         .pipe gulp.dest(destBase)
 
 
-gulp.watch ['./*.html', './include/*.html'],['example']
+gulp.task 'watch', ['example'], ()->
+    gulp.watch ['./src/**/*'], ['example']
 
 
-gulp.task 'default',['example']
+gulp.task 'default', ['watch']

@@ -1,7 +1,7 @@
 {
   "name": "try-gulp-html-optimizer",
   "version": "1.0.0",
-  "description": "",
+  "description": "html文件合并，本质是个简单的模板引擎,额外添加的一些功能",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +9,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "coffee-script": "^1.9.1",
+    "coffee-script": "^1.9.3",
     "gulp": "^3.8.11",
-    "gulp-html-optimizer": "^0.1.5"
+    "gulp-html-optimizer": "^0.1.25",
+    "gulp-img-css-sprite": "^0.1.5"
   }
 }
