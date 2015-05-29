@@ -1,0 +1,19 @@
+{
+  "name": "try-jquery",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Jayin/learn-html5dlide",
+  "authors": [
+    "Jayin Ton <tonjayin@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
